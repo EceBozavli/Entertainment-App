@@ -1,0 +1,359 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Outfit', sans-serif;
+  background-color: #10141E;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.app-container {
+  font-family: 'Outfit', sans-serif;
+  background-color: #10141E;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #161D2F;
+  padding: 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.btn-group button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  color: #5A698F;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.btn-group button span {
+  display: none; 
+}
+
+.btn-group button.active {
+  color: #FFFFFF;
+}
+
+.btn-group button.active img {
+  filter: brightness(0) invert(1);
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 24px;
+}
+
+.search-area, .search-series, .search-movies, .search-book-marked {
+  display: flex;
+  margin-bottom: 26px;
+  margin-top: 24px;
+}
+
+.search-area input, .search-series input, .search-movies input, .search-book-marked input {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.16px;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: #FFFFFF;
+  padding: 16px;
+}
+
+.trending-area {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.trending-area h3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25.2px;
+  letter-spacing: -0.3125px;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.trend-movies {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.recomended-area h3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25.2px;
+  letter-spacing: -0.3125px;
+  color: #e1dede;
+  margin-bottom: 24px;
+}
+
+.recomend-movies {
+  margin-block: 24px;
+  margin-inline: auto;
+}
+
+.recomend-movies ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding-bottom: 61px;
+}
+
+.inner {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.inner p {
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13.86px;
+}
+
+.inner .type {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.inner .mv, .inner .sr {
+  width: 10px;
+  height: 10px;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.64px;
+  color: #FFFFFF;
+}
+
+.movie-item {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.movie-poster {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.bookmark-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.bookmark-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bookmark-btn img {
+  width: 12px;
+  height: 14px;
+}
+.movie-item {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.movie-poster {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.bookmark-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.bookmark-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bookmark-btn img {
+  width: 12px;
+  height: 14px;
+}
+
+.no-results {
+  color: #5A698F;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .btn-group {
+    gap: 32px;
+  }
+  
+  .recomend-movies ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-container {
+    flex-direction: row;
+  }
+  
+  .header {
+    flex-direction: column;
+    height: 100vh;
+    width: 96px;
+    position: fixed;
+    padding: 24px 16px;
+  }
+  
+  .logo {
+    margin-bottom: 48px;
+    justify-content: center;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    gap: 36px;
+    margin-top: 24px;
+    flex-grow: 1;
+  }
+  
+  .btn-group button {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+  
+  .btn-group button span {
+    display: block; 
+  }
+  
+  .avatar {
+    margin-top: auto;
+  }
+  
+  .content-area {
+    margin-left: 96px;
+    padding: 24px 32px;
+  }
+  
+  .recomend-movies ul {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    width: 160px;
+  }
+  
+  .content-area {
+    margin-left: 160px;
+    padding: 32px 36px;
+  }
+}
