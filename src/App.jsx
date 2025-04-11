@@ -99,35 +99,35 @@ function App() {
     <div className="app-container">
       <header className="header">
         <div className="logo">
-          <img src="./public/img/header/Movie.svg" alt="Movie Logo" />
+          <img src="./img/header/Movie.svg" alt="Movie Logo" />
         </div>
         <div className="btn-group">
           <button onClick={handleShow} className={isClickTrend ? 'active' : ''}>
-            <img src="./public/img/header/full.svg" alt="Full" />
+            <img src="./img/header/full.svg" alt="Full" />
             <span>Home</span>
           </button>
           <button onClick={handleMovie} className={isClick ? 'active' : ''}>
-            <img src="./public/img/header/moviesss.svg" alt="Movies" />
+            <img src="./img/header/moviesss.svg" alt="Movies" />
             <span>Movies</span>
           </button>
           <button onClick={handleSeries} className={isClickSeries ? 'active' : ''}>
-            <img src="./public/img/header/series.svg" alt="Series" />
+            <img src="./img/header/series.svg" alt="Series" />
             <span>TV Series</span>
           </button>
           <button onClick={handleBookMarked} className={isClickBookMarked ? 'active' : ''}>
-            <img src="./public/img/header/Bookmark.svg" alt="Bookmark" />
+            <img src="./img/header/Bookmark.svg" alt="Bookmark" />
             <span>Bookmarked</span>
           </button>
         </div>
         <div className="avatar">
-          <img src="./public/img/header/avatar.svg" alt="Avatar" />
+          <img src="./img/header/avatar.svg" alt="Avatar" />
         </div>
       </header>
 
       <div className="content-area">
         {!isClick && !isClickSeries && !isClickBookMarked && (
           <div className="search-area">
-            <img src="./public/img/header/search.svg" alt="Search" />
+            <img src="./img/header/search.svg" alt="Search" />
             <input
               type="text"
               placeholder="Search for movies or TV series"
@@ -142,11 +142,11 @@ function App() {
             <>
               <h3>Trending</h3>
               <div className="trend-movies">
-                <img src="./public/img/trending/1.svg" alt="Trending movie 1" />
-                <img src="./public/img/trending/2.svg" alt="Trending movie 2" />
-                <img src="./public/img/trending/3.svg" alt="Trending movie 3" />
-                <img src="./public/img/trending/4.svg" alt="Trending movie 4" />
-                <img src="./public/img/trending/5.svg" alt="Trending movie 5" />
+                <img src="./img/trending/1.svg" alt="Trending movie 1" />
+                <img src="./img/trending/2.svg" alt="Trending movie 2" />
+                <img src="./img/trending/3.svg" alt="Trending movie 3" />
+                <img src="./img/trending/4.svg" alt="Trending movie 4" />
+                <img src="./img/trending/5.svg" alt="Trending movie 5" />
               </div>
             </>
           )}
@@ -156,7 +156,7 @@ function App() {
           {isClick ? (
             <>
               <div className="search-movies">
-                <img src="./public/img/header/search.svg" alt="Search" />
+                <img src="./img/header/search.svg" alt="Search" />
                 <input
                   type="text"
                   placeholder="Search for movies"
@@ -169,7 +169,7 @@ function App() {
           ) : isClickSeries ? (
             <>
               <div className="search-series">
-                <img src="./public/img/header/search.svg" alt="Search" />
+                <img src="./img/header/search.svg" alt="Search" />
                 <input
                   type="text"
                   placeholder="Search for series"
@@ -182,7 +182,7 @@ function App() {
           ) : isClickBookMarked ? (
             <>
               <div className="search-book-marked">
-                <img src="./public/img/header/search.svg" alt="Search" />
+                <img src="./img/header/search.svg" alt="Search" />
                 <input
                   type="text"
                   placeholder="Search for bookmarked"
@@ -204,7 +204,7 @@ function App() {
                             onClick={() => toggleBookmark(movie.id)}
                           >
                             <img
-                              src={movie.isBookMarked ? "./public/img/bookmark-filled.svg" : "./public/img/bookmark-empty.svg"}
+                              src={movie.isBookMarked ? "./img/bookmark-filled.svg" : "./img/bookmark-empty.svg"}
                               alt={movie.isBookMarked ? "Bookmarked" : "Not bookmarked"}
                             />
                           </button>
@@ -212,7 +212,7 @@ function App() {
                         <div className="inner">
                           <p className="year">{movie.year}</p>
                           <div className="type">
-                            <img src="./public/img/header/moviesss.svg" alt="Movie" className="mv" />
+                            <img src="./img/header/moviesss.svg" alt="Movie" className="mv" />
                             <p className="type-inner">{movie.type}</p>
                           </div>
                           <p className="audience">{movie.audience}</p>
@@ -239,7 +239,7 @@ function App() {
                             onClick={() => toggleBookmark(series.id)}
                           >
                             <img
-                              src={series.isBookMarked ? "./public/img/bookmark-filled.svg" : "./public/img/bookmark-empty.svg"}
+                              src={series.isBookMarked ? "./img/bookmark-filled.svg" : "./img/bookmark-empty.svg"}
                               alt={series.isBookMarked ? "Bookmarked" : "Not bookmarked"}
                             />
                           </button>
@@ -247,7 +247,7 @@ function App() {
                         <div className="inner">
                           <p className="year">{series.year}</p>
                           <div className="type">
-                            <img src="./public/img/header/series.svg" alt="Series" className="sr" />
+                            <img src="./img/header/series.svg" alt="Series" className="sr" />
                             <p className="type-inner">{series.type}</p>
                           </div>
                           <p className="audience">{series.audience}</p>
@@ -277,7 +277,7 @@ function App() {
                         onClick={() => toggleBookmark(movie.id)}
                       >
                         <img
-                          src={movie.isBookMarked ? "./public/img/bookmark-filled.svg" : "./public/img/bookmark-empty.svg"}
+                          src={movie.isBookMarked ? "./img/bookmark-filled.svg" : "./img/bookmark-empty.svg"}
                           alt={movie.isBookMarked ? "Bookmarked" : "Not bookmarked"}
                         />
                       </button>
@@ -286,9 +286,9 @@ function App() {
                       <p className="year">{movie.year}</p>
                       <div className="type">
                         {movie.type === 'Movie' ? (
-                          <img src="./public/img/header/moviesss.svg" alt="Movie" className="mv" />
+                          <img src="./img/header/moviesss.svg" alt="Movie" className="mv" />
                         ) : (
-                          <img src="./public/img/header/series.svg" alt="Series" className="sr" />
+                          <img src="./img/header/series.svg" alt="Series" className="sr" />
                         )}
                         <p className="type-inner">{movie.type}</p>
                       </div>
